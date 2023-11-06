@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0phskn6pv6uc"]
+
+[ext_resource type="Script" path="res://assets/scripts/click_timer.gd" id="1_i2qx0"]
+[ext_resource type="Texture2D" uid="uid://drjengdcpg3y4" path="res://assets/sprites/arrow.png" id="2_u763n"]
+
+[node name="Click" type="Node2D"]
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+script = ExtResource("1_i2qx0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_u763n")
+offset = Vector2(0, -16)
+flip_v = true
+
+[connection signal="timeout" from="Timer" to="Timer" method="_on_Click_timeout"]

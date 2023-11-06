@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bu4wa1wpk2a3k"]
+
+[ext_resource type="Script" path="res://assets/scripts/player.gd" id="1_4r300"]
+[ext_resource type="Texture2D" uid="uid://deklnqx4llvow" path="res://assets/sprites/player.png" id="1_ucuai"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8gk2o"]
+radius = 16.0
+
+[sub_resource type="Curve2D" id="Curve2D_w70lj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 619, -372, 0, 0, 0, 0, 623, 394, 0, 0, 0, 0, 1884, 393, 0, 0, 0, 0, 1884, -372, 0, 0, 0, 0, 619, -372)
+}
+point_count = 5
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_4r300")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8gk2o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ucuai")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="SpawnPath" type="Path2D" parent="."]
+position = Vector2(-1257, -17)
+curve = SubResource("Curve2D_w70lj")
+
+[node name="SpawnPathFollow" type="PathFollow2D" parent="SpawnPath"]
+position = Vector2(619.017, -372)
+rotation = 3.14159
+progress = 4056.98
+
+[node name="SpawnMarker" type="Marker2D" parent="SpawnPath/SpawnPathFollow"]

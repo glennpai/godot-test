@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://qyncdk7bnt1c"]
+
+[ext_resource type="PackedScene" uid="uid://bu4wa1wpk2a3k" path="res://assets/scenes/player.tscn" id="1_82cyi"]
+[ext_resource type="PackedScene" uid="uid://2vytxmt3i8jg" path="res://assets/scenes/spawner.tscn" id="3_lsa2r"]
+[ext_resource type="PackedScene" uid="uid://bcl46npcjivd8" path="res://assets/scenes/game_canvas.tscn" id="3_ulkvj"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_82cyi")]
+
+[node name="Spawner" parent="." instance=ExtResource("3_lsa2r")]
+
+[node name="GameCanvas" parent="." instance=ExtResource("3_ulkvj")]
