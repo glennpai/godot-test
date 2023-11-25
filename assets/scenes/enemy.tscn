@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://cxvf8eyk5g1sc" path="res://assets/sprites/enemy.png" id="1_0wdga"]
 [ext_resource type="Script" path="res://assets/scripts/enemy.gd" id="1_3i7p6"]
-[ext_resource type="PackedScene" uid="uid://bfgdvuu87c3k7" path="res://assets/scenes/stun_timer.tscn" id="2_oqmbd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qd3i4"]
 radius = 16.1245
@@ -12,8 +11,6 @@ script = ExtResource("1_3i7p6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_qd3i4")
-
-[node name="StunTimer" parent="CollisionShape2D" instance=ExtResource("2_oqmbd")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_0wdga")
